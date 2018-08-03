@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <!--bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!--ajax-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script>
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      if (cvalue != 'jlane6') {
+        window.location = "file:///C:/Users/jbooth3/Documents/DNN/DMAI/myAjaxPage.html";
+      } else {
+        window.location = "file:///C:/Users/jbooth3/Documents/DNN/SiteFiles/faculty-profiles.htm";
+      }
+    }
+  </script>
+  <script>
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkCookie() {
+      var user = getCookie("faculty");
+      if (user != "") {
+        alert("Faculty: " + user);
+      } else {
+        user = prompt("Please enter the faculty members username:", "");
+        if (user != "" && user != null) {
+          setCookie("faculty", user, 365);
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+  <div class="container">
+
+    <!-- The Modal Profile Preview -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Profile Preview</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body col-xs-12 blue-bg">
+            <div class="faculty-profile-container row">
+              <div class="col-xs-6 img-no-padding">
+                <img id="previewPic" alt="Jill Lane" src="images/jillLane.jpg">
+              </div>
+              <div class="col-xs-6 faculty-profile">
+                <div class="faculty-profile-info">
+                  <p>
+                    <strong><span id="prefix">Dr. </span><span id="fName">Jill</span><span id="lName"> Lane</span></strong><br>
+                    <span id="title">Associate Provost</span>
+                    <hr style="color:#fff; background:#fff;">
+                  </p>
+                  <p>
+                    Office: </span id="office">UC 229<span><br>
+    							<span id="dept">Department</span><br>
+                    <span id="college">College</span><br><span id="phone">678-466-4914</span><br>
+                    <a class="white" href="mailto:JillLane@clayton.edu" id="email">JillLane@clayton.edu</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--header-->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="header">
+        <img id="headerImg" src="http://www.clayton.edu/Portals/_default/skins/Clayton_Stamats/Images/clayton_logo.jpg" alt="CSU logo">
+      </div>
+    </div>
+  </div>
+
+  <!--faculty listing-->
+  <div class="row">
+    <div class="col-md-12 divider">
+
+    </div>
+  </div>
+
+  <!--Search Box-->
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <div class="card " style="padding:2%">
+        <div class="card-block white">
+          <div class="card-header blue-bg">
+            <h4 class="card-title">Search the Faculty Directory</h4>
+          </div>
+          <div class="card-body white-bg">
+            <form>
+              <div class="input-group">
+                <select name="Filter">
+              <option value="" disabled selected hidden>Filter By</option>
+              <option value="Name">Name</option>
+              <option value="Department">Department</option>
+              <option value="College">College</option>
+              <option value="Department">Username</option>
+            </select>
+                <br><br>
+                <input type="text" class="form-control" placeholder="Search for names.." aria-label="Faculty Member's Name">
+                <button onclick="checkCookie()" type="submit" value="Search"><div class="d-none d-md-inline col-md-12">Search </div><div class="d-md-none d-xs-inline col-xs-12"><i class="fas fa-search"></i></div></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--Testing--->
+<div class="row">
+  <div class="col-sm-12  profileButtons">
+
+  </div>
+</div>
+
+  <!--A through Z list-->
+  <div class="row" style="margin-top:2%;">
+    <div class="col-lg-10 offset-lg-1">
+      <div class="card" style="padding:2%">
+        <div class="card-block">
+          <h4 class="card-title"></h4>
+
+          <div class="lettersDiv">
+              <a class="letters" onclick="showDiv('A');" href=#A>A</a>
+              <a class="letters" onclick="showDiv('B');" href=#B>B</a>
+              <a class="letters" onclick="showDiv('C');" href=#C>C</a>
+              <a class="letters" href="#listingD">D </a>
+              <a class="letters" href="#listingE">E </a>
+              <a class="letters" href="#listingF">F </a>
+              <a class="letters" href="#listingG">G </a>
+              <a class="letters" href="#listingH">H </a>
+              <a class="letters" href="#listingI">I </a>
+              <a class="letters" href="#listingJ">J </a>
+              <a class="letters" href="#listingK">K </a>
+              <a class="letters" href="#listingL">L </a>
+              <a class="letters" href="#listingM">M </a>
+              <a class="letters" href="#listingN">N </a>
+              <a class="letters" href="#listingO">O </a>
+              <a class="letters" href="#listingP">P </a>
+              <a class="letters" href="#listingQ">Q </a>
+              <a class="letters" href="#listingR">R </a>
+              <a class="letters" href="#listingS">S </a>
+              <a class="letters" href="#listingT">T </a>
+              <a class="letters" href="#listingU">U </a>
+              <a class="letters" href="#listingV">V </a>
+              <a class="letters" href="#listingW">W </a>
+              <a class="letters" href="#listingX">X </a>
+              <a class="letters" href="#listingY">Y </a>
+              <a class="letters" href="#listingZ">Z</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--Alphabetical Faculty Links-->
+  <div class="row" style="margin-top:5%;">
+    <div class="tab-content col-sm-6 offset-sm-3">
+
+
+      <div class="listing animated fadeIn" id="A">
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane A</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+      </div>
+
+      <div class="listing animated fadeIn" id="B">
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane B</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+      </div>
+
+      <div class="listing animated fadeIn" id="C">
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane C</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+        </div>
+        <div role="separator" class="dropdown-divider"></div>
+      </div>
+
+
+    </div>
+  </div>
+  <script>
+    showDiv(""); //loads an initial table
+    function showDiv(tableName) { //accepts new table basaed on users mouseclick
+      "use strict";
+      var j, i; //used for loop iterations
+      var x = document.getElementsByClassName("fadeIn"); //w-3 styling
+      var x = document.getElementsByClassName("listing"); //loads array with list elements
+
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(tableName).style.display = "block";
+      document.getElementById(tableName).style.textAlign = "-webkit-center";
+      document.getElementById(tableName).style.padding = "10px 10px 10px 10px";
+      document.getElementById(tableName).style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
