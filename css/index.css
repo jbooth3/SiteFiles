@@ -5,15 +5,16 @@
 .white{color:#fff;}
 .white-bg{background-color:#fff;}
 .header{padding: 15px; border-bottom: solid 5px #092c74;}
-#headerImg{height:auto; width:20%; max-width:350px; padding: 10px 0px 10px 10px;}
+#headerImg{height:auto; width:20%; max-width:350px; min-width: 150px; padding: 10px 0px 10px 10px;}
 .divider{background: #eee; height:45px; width:100%;}
 .card{margin: 2%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 .form-control{background: url('')}
 .lettersDiv{text-align: center;}
-.letters a, .letters button, .letters{text-align: center; margin: 0px .2em 0px .2em;color:#092c74;font-weight: bold; font-size: 20px;}
+.letters a, .letters button, .letters{text-align: center; margin: 0px .4em 0px .4em;color:#092c74;font-weight: bold; font-size: 24px;}
 .letters:hover{text-decoration: none; border-bottom:solid 2px #fc6719;}
-.listing{display: none;}
-.previewButton{
+.listing{display: none; margin-bottom:5%;margin-left: 2%;margin-right: 2%;}
+.listLetter{font-weight: 900;font-size: 30px;color:#092c74;text-align: center;}
+.previewButton, .previewButton:focus{
   background-color: #092c74;
    border: none;
    color: white;
@@ -24,24 +25,53 @@
    font-size: 16px;
    margin: 4px 2px;
    cursor: pointer;
-
+   transition: 0.3s;
 }
+.previewButton:hover{background-color: #eee;color: #092c74;font-weight: 600;}
 #previewPic{height:200px; width:auto;}
 .faculty-profile-container, .faculty-profile-content {margin: 10px 0;}
 .faculty-profile {background-image: none; background-repeat: no-repeat; padding-left: 10px;}
 .faculty-profile-info {line-height: 1.2rem; position: absolute;top:0;padding: 2px;}
 .faculty-profile-info p {color: #fff;}
 .faculty-profile-content img {background: #092c74;}/*newly added*/
+
+@media only screen and (max-width: 1450px) {
+  .letters a, .letters button, .letters{text-align: center; margin: 0px .3em 0px .3em;color:#092c74;font-weight: bold; font-size: 24px;}
+  .letters:hover{text-decoration: none; border-bottom:solid 2px #fc6719;}
+
+}
+@media only screen and (max-width: 1285px) {
+  .letters a, .letters button, .letters{text-align: center; margin: 0px .2em 0px .2em;color:#092c74;font-weight: bold; font-size: 22px;}
+  .letters:hover{text-decoration: none; border-bottom:solid 2px #fc6719;}
+
+}
+@media only screen and (max-width: 1020px) {
+  .letters a, .letters button, .letters{text-align: center; margin: 0px .15em 0px .15em;color:#092c74;font-weight: bold; font-size: 22px;}
+  .letters:hover{text-decoration: none; border-bottom:solid 2px #fc6719;}
+  .previewButton{
+     padding: 15px 14px;
+     font-size: 14px;
+     margin: 4px 2px;
+     cursor: pointer;
+  }
+}
+@media only screen and (max-width: 790px) {
+  #previewPic{height:150px; width:auto;}
+  .faculty-profile-info{font-size: 10px;line-height: 1.0rem;}
+  .letters{ text-align: center; margin: 0px .08em 0px .08em;color:#092c74;font-weight: bold; font-size: 18px;}
+  .letters:hover{color:#fc6719;}
+}
 @media only screen and (max-width: 600px) {
   #previewPic{height:150px; width:auto;}
   .faculty-profile-info{font-size: 10px;line-height: 1.0rem;}
   .letters{ text-align: center; margin: 0px .1em 0px .1em;color:#092c74;font-weight: bold; font-size: 16px;}
   .letters:hover{color:#fc6719;}
 }
-@media only screen and (max-width: 778px) {
+@media only screen and (max-width: 550px) {
   #previewPic{height:150px; width:auto;}
   .faculty-profile-info{font-size: 10px;line-height: 1.0rem;}
-  .letters{ text-align: center; margin: 0px .08em 0px .08em;color:#092c74;font-weight: bold; font-size: 16px;}
+  .letters{ text-align: center; margin: 0px .1em 0px .1em;color:#092c74;font-weight: bold; font-size: 14px;}
   .letters:hover{color:#fc6719;}
-  body{background: red;}
+  .previewButton, .previewButton:focus{padding: 15px 32px;font-size: 16px;}
+
 }

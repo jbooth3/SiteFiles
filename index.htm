@@ -4,7 +4,6 @@
 <head>
   <!--bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <!--ajax-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,53 +15,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-
-  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
-
   <script>
-    function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      if (cvalue != 'jlane6') {
-        window.location = "file:///C:/Users/jbooth3/Documents/DNN/DMAI/myAjaxPage.html";
-      } else {
-        window.location = "file:///C:/Users/jbooth3/Documents/DNN/SiteFiles/faculty-profiles.htm";
-      }
-    }
-  </script>
-  <script>
-    function getCookie(cname) {
-      var name = cname + "=";
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-    function checkCookie() {
-      var user = getCookie("faculty");
-      if (user != "") {
-        alert("Faculty: " + user);
-      } else {
-        user = prompt("Please enter the faculty members username:", "");
-        if (user != "" && user != null) {
-          setCookie("faculty", user, 365);
-        }
-      }
-    }
-  </script>
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 
 </head>
 
@@ -128,7 +109,7 @@
     </div>
   </div>
 
-  <!--faculty listing-->
+  <!--Grey divider-->
   <div class="row">
     <div class="col-md-12 divider">
 
@@ -155,7 +136,7 @@
             </select>
                 <br><br>
                 <input type="text" class="form-control" placeholder="Search for names.." aria-label="Faculty Member's Name">
-                <button onclick="checkCookie()" type="submit" value="Search"><div class="d-none d-md-inline col-md-12">Search </div><div class="d-md-none d-xs-inline col-xs-12"><i class="fas fa-search"></i></div></button>
+                <button type="submit" value="Search"><div class="d-none d-md-inline col-md-12">Search </div><div class="d-md-none d-xs-inline col-xs-12"><i class="fas fa-search"></i></div></button>
               </div>
             </form>
           </div>
@@ -177,8 +158,6 @@
     <div class="col-lg-10 offset-lg-1">
       <div class="card" style="padding:2%">
         <div class="card-block">
-          <h4 class="card-title"></h4>
-
           <div class="lettersDiv">
               <a class="letters" onclick="showDiv('A');" href=#A>A</a>
               <a class="letters" onclick="showDiv('B');" href=#B>B</a>
@@ -207,7 +186,6 @@
               <a class="letters" href="#listingY">Y </a>
               <a class="letters" href="#listingZ">Z</a>
           </div>
-
         </div>
       </div>
     </div>
@@ -217,60 +195,66 @@
 
 
   <!--Alphabetical Faculty Links-->
-  <div class="row" style="margin-top:5%;">
-    <div class="tab-content col-sm-6 offset-sm-3">
+  <div class="row listRow" style="margin-top:5%;">
+    <div class="tab-content col-lg-10 offset-lg-1">
 
 
       <div class="listing animated fadeIn" id="A">
+          <div class="listLetter">A</div>
+          <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane A</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jill Lane</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
       </div>
 
       <div class="listing animated fadeIn" id="B">
+        <div class="listLetter">B</div>
+        <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane B</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jill Lane</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
       </div>
 
       <div class="listing animated fadeIn" id="C">
+        <div class="listLetter">C</div>
+        <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jlane6', 365)">Jill Lane C</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jill Lane</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jbooth3', 365)">Jonathan Booth</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Jonathan Booth</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
         <div class="row">
-          <div class="col-sm-8"><button class="dropdown-item" onclick="setCookie('faculty', 'jmays5', 365)">Justin Mays</button></div>
-          <div class="col-sm-4"><button class="dropdown-item previewButton" data-toggle="modal" data-target="#myModal" style="text-align:center;">Preview</button></div>
+          <div class="col-sm-8"><button class="dropdown-item" onclick='window.location.href = "./faculty-profiles.htm";'>Justin Mays</button></div>
+          <div class="col-sm-4"><button class="dropdown-item previewButton" onclick='window.location.href = "./faculty-profiles.htm";' style="text-align:center;">Preview</button></div>
         </div>
         <div role="separator" class="dropdown-divider"></div>
       </div>
