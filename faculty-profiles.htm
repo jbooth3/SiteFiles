@@ -29,7 +29,7 @@
 								Office: </span id="office">UC 229<span><br>
 							<span id="dept">Department</span><br>
 								<span id="college">College</span><br> Office Phone: <span id="phone">678-466-4914</span><br>
-								<a class="white" href="mailto:JillLane@clayton.edu" id="email">JillLane@clayton.edu</a>
+								<a class="white" id="mailTo" href="mailto:JillLane@clayton.edu" id="email">JillLane@clayton.edu</a>
 							</p>
 						</div>
 					</div>
@@ -42,28 +42,27 @@
 						<ul class="nav nav-tabs responsive">
 							<li class="active"><a href="#1" data-toggle="tab">Biography</a></li>
 							<li><a href="#2" data-toggle="tab">Credentials</a></li>
-							<li><a href="#3" data-toggle="tab">Schedule</a></li>
+							<li><a href="#3" data-toggle="tab">Teaching</a></li>
 							<li><a href="#4" data-toggle="tab">Scholarship</a></li>
 							<li><a href="#5" data-toggle="tab">Service</a></li>
 						</ul>
 						<div class="tab-content responsive">
 							<div class="tab-pane active" id="1">
 								<h2>Biography</h2>
-								<p>Digital Measures Content from API Here</p>
+								<p id="biography">Digital Measures Content from API Here</p>
 							</div>
+
 							<div class="tab-pane" id="2">
-
-
-								<h3><i class="fas fa-plus"></i> Education</h3>
-								<div style="text-indent: 5%;">
-									<p><span id="degree1"><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
-									<p><span id="degree2"><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
-									<p><span id="degree3"><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
-									<p><span id="degree4"><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
-									<p><span id="degree5"><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
+								<h2><i class="fas fa-plus"></i> Education</h2>
+								<div id="education" style="text-indent: 5%;">
+									<p><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
+									<p><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
+									<p><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
+									<p><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
+									<p><span id="degree">Degree, </span><span id="degreeMajor">Major, </span><span id="degreeInstitution">Institution, </span><span id="degreeYear">Year</span></p>
 								</div>
-								<h3><i class="fas fa-plus"></i> Awards and Honors</h3>
-								<div style="text-indent: 5%;">
+								<h2><i class="fas fa-plus"></i> Awards and Honors</h2>
+								<div id="awards" style="text-indent: 5%;">
 									<p><span id="award1"><span id="awardName">Award Name, </span><span id="awardOrg">Organization/Sponsor, </span><span id="awardType">Type, </span><span id="awardDate">Date Received</span></p>
 									<p><span id="award2"><span id="awardName">Award Name, </span><span id="awardOrg">Organization/Sponsor, </span><span id="awardType">Type, </span><span id="awardDate">Date Received</span></p>
 									<p><span id="award3"><span id="awardName">Award Name, </span><span id="awardOrg">Organization/Sponsor, </span><span id="awardType">Type, </span><span id="awardDate">Date Received</span></p>
@@ -71,18 +70,26 @@
 								</div>
 							</div>
 							<div class="tab-pane" id="3">
-								<h3><i class="fas fa-plus"></i> Semesters</h3>
-								<div style="text-indent: 5%;">
-									<h4 id="semester">Term1</h4>
-									<div style="text-indent: 10%;">
+								<h2><i class="fas fa-plus"></i> Academic Year</h2>
+								<div id="AY" style="text-indent: 5%;">
+									<h3 id="fall">Fall</h3>
+									<div id="fallCourses" style="text-indent: 10%;">
 										<p><span id="class1"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class2"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class3"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class4"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class5"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 									</div>
-									<h4 id="semester">Term2</h4>
-									<div style="text-indent: 10%;">
+									<h3 id="summer">Summer</h3>
+									<div id="summerCourses"style="text-indent: 10%;">
+										<p><span id="class1"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
+										<p><span id="class2"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
+										<p><span id="class3"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
+										<p><span id="class4"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
+										<p><span id="class5"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
+									</div>
+									<h3 id="spring">Spring</h3>
+									<div id="springCouses" style="text-indent: 10%;">
 										<p><span id="class1"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class2"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
 										<p><span id="class3"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
@@ -92,8 +99,8 @@
 								</div>
 							</div>
 							<div class="tab-pane" id="4">
-								<h3><i class="fas fa-plus"></i> Intellectual Contributions</h3>
-								<div style="text-indent: 5%;">
+								<h2><i class="fas fa-plus"></i> Intellectual Contributions</h2>
+								<div id="publications" style="text-indent: 5%;">
 									<p><span id="pub1"><span id="icStatus">Status, </span><span id="icTitle">Title of Contribution, </span><span id="icAuthor"> Authors, </span><span id="icBookTitle">Book Title, </span><span id="icPublisher">Publisher, </span><span id="icVolume">Volumn, </span>
 										<span id="icIssue">Issue/Edition </span></p>
 									<p><span id="pub2"><span id="icStatus">Status, </span><span id="icTitle">Title of Contribution, </span><span id="icAuthor"> Authors, </span><span id="icBookTitle">Book Title, </span><span id="icPublisher">Publisher, </span><span id="icVolume">Volumn, </span>
@@ -103,15 +110,15 @@
 									<p><span id="pub4"><span id="icStatus">Status, </span><span id="icTitle">Title of Contribution, </span><span id="icAuthor"> Authors, </span><span id="icBookTitle">Book Title, </span><span id="icPublisher">Publisher, </span><span id="icVolume">Volumn, </span>
 										<span id="icIssue">Issue/Edition </span></p>
 								</div>
-								<h3><i class="fas fa-plus"></i> Artistic and Professional Performances and Exhibits</h3>
-								<div style="text-indent: 5%;">
+								<h2><i class="fas fa-plus"></i> Artistic and Professional Performances and Exhibits</h2>
+								<div id="appe" style="text-indent: 5%;">
 									<p><span id="appe1"><span id="appeTypeOfWork">Type of Work, </span><span id="appeTitle">Title, </span><span id="appeLocation">Location </span><span id="appeDelivery">Type of Delivery, </span><span id="appeStart">Start Date, </span><span id="appeEnd">End Date, </span></p>
 									<p><span id="appe2"><span id="appeTypeOfWork">Type of Work, </span><span id="appeTitle">Title, </span><span id="appeLocation">Location </span><span id="appeDelivery">Type of Delivery, </span><span id="appeStart">Start Date, </span><span id="appeEnd">End Date, </span></p>
 									<p><span id="appe3"><span id="appeTypeOfWork">Type of Work, </span><span id="appeTitle">Title, </span><span id="appeLocation">Location </span><span id="appeDelivery">Type of Delivery, </span><span id="appeStart">Start Date, </span><span id="appeEnd">End Date, </span></p>
 									<p><span id="appe4"><span id="appeTypeOfWork">Type of Work, </span><span id="appeTitle">Title, </span><span id="appeLocation">Location </span><span id="appeDelivery">Type of Delivery, </span><span id="appeStart">Start Date, </span><span id="appeEnd">End Date, </span></p>
 								</div>
-								<h3><i class="fas fa-plus"></i> Contracts, Grants and Sponsored Research</h3>
-								<div style="text-indent: 5%;">
+								<h2><i class="fas fa-plus"></i> Contracts, Grants and Sponsored Research</h2>
+								<div id="cgsr" style="text-indent: 5%;">
 									<p><span id="gsr1"><span id="gsrTitle">Contract/Grant/Research Title, </span><span id="gsrSponsor">Sponsoring Org, </span><span id="gsrInvestigators">Inverstigators, </span><span id="gsrStatus">Current Status, </span><span id="gsrAmount">Amount, </span>
 										<span id="gsrAACSB">AACSB Classification, </span><span id="gsrStart">Start Date, </span><span id="gsrEnd">End Date, </span></p>
 									<p><span id="gsr2"><span id="gsrTitle">Contract/Grant/Research Title, </span><span id="gsrSponsor">Sponsoring Org, </span><span id="gsrInvestigators">Inverstigators, </span><span id="gsrStatus">Current Status, </span><span id="gsrAmount">Amount, </span>
@@ -121,21 +128,23 @@
 									<p><span id="gsr4"><span id="gsrTitle">Contract/Grant/Research Title, </span><span id="gsrSponsor">Sponsoring Org, </span><span id="gsrInvestigators">Inverstigators, </span><span id="gsrStatus">Current Status, </span><span id="gsrAmount">Amount, </span>
 										<span id="gsrAACSB">AACSB Classification, </span><span id="gsrStart">Start Date, </span><span id="gsrEnd">End Date, </span></p>
 								</div>
-								<h3><i class="fas fa-plus"></i> Presentations</h3>
-								<div style="text-indent: 5%;">
+								<h2><i class="fas fa-plus"></i> Presentations</h2>
+								<div id="presentations" style="text-indent: 5%;">
 									<p><span id="pres1"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
 										<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
-										<p><span id="pres2"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
-											<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>									<p><span id="pub3"><span id="courseName">Course Name, </span><span id="coursePrefix">Prefix, </span><span id="courseNumber">Course Number </span><span id="courseSection">Scetion Number</span></p>
-											<p><span id="pres3"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
-												<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
-												<p><span id="pres4"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
-													<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
-																				</div>
+									<p><span id="pres2"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
+										<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
+									<p><span id="pres3"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
+										<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
+									<p><span id="pres4"><span id="presType">Type, </span><span id="presTitle">Presentation Title, </span><span id="presConfName">Conference/Meeting Name </span><span id="presSponsor">Sponsoring Org, </span><span id="presLocation">Location, </span>
+										<span id="presStart">Start Date, </span><span id="presEnd">End Date </span></p>
+								</div>
 							</div>
 							<div class="tab-pane" id="5">
 								<h2>Service</h2>
+								<div id="services" style="text-indent: 5%;">
 								<p>Digital Measures Content from API Here</p>
+							</div>
 							</div>
 						</div>
 					</div>
